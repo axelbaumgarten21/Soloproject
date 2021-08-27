@@ -48,9 +48,6 @@ async redfill() {
   await this.driver.wait(until.elementLocated(this.fillbutton)).click();
   await this.driver.wait(until.elementLocated(this.canvas)).click();
 }
-async typecolor(text: string) {
-return this.sendKeys(this.colornumber, `${text}`)
-}
 async clicky() {
   await this.driver.wait(until.elementLocated(this.signinbutton)).click();
 }
