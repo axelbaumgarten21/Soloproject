@@ -1,6 +1,6 @@
 import { source } from "./source"
 import { Builder, Capabilities, By, ThenableWebDriver, Actions, WebElement, WebDriver, Locator, Condition, TouchSequence, } from "selenium-webdriver"
-// import { del } from "selenium-webdriver/http";
+
 
 
 
