@@ -4,13 +4,13 @@ import { Builder, Capabilities, By, ThenableWebDriver, Actions, WebElement, WebD
 const chromedriver = require('chromedriver')
 const driver = new Builder().withCapabilities(Capabilities.chrome()).build()
 const page = new source(driver); //this is to utilize my source page functions
-const colornumber: By = By.xpath("//*[@id='rc-editable-input-7']");
+
 const agreeclick: By = By.xpath('//*[@id="main-container"]/div[1]/div/div[2]/div/form/div[5]/div/div/label');
 const createaccountbutton: By = By.xpath("//*[@id='main-container']/div[1]/div/div[2]/div/form/div[6]/button");
 
 jest.setTimeout(10000)
 beforeAll(async () => {
-    await driver.get('https://www.sumopaint.com/');
+    await driver.get('https://sumo.app/');
 });
 
 afterAll(async () => {
