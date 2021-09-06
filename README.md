@@ -10,8 +10,8 @@ To execute these tests:
 
 (inside git bash)
 
-1. Install dependencies: npm i
+1. Install dependencies: `npm i`
 
-2. Execute the tests: npm (name of the test)
+2. Execute the tests: `npm (name of the test)`
 
 *** I am actively updating my locators as this website is updated frequently ***
