@@ -1,10 +1,4 @@
 import { Browser, By, Key, until, WebDriver } from "selenium-webdriver";
-
-
-
-
-
-
     export class source {
         driver: WebDriver;
         url: string = "https://sumo.app/paint/";
@@ -29,22 +23,19 @@ email: By = By.xpath("//*[@id='email']");
 password: By = By.xpath("//*[@id='password']");
 repassword: By = By.xpath("//*[@id='password_confirmation']");
 
-
-
-        
-
 constructor(driver: WebDriver) {
   this.driver = driver;
 }
+//This allows you to send text to a field
 async sendKeys(elementBy: By, keys) {
   await this.driver.wait(until.elementLocated(elementBy));
   return this.driver.findElement(elementBy).sendKeys(keys);
 }
+//This looks for whatever text is currently in a field
 async getText(elementBy: By) {
     await this.driver.wait(until.elementLocated(elementBy));
     return (await this.driver.findElement(elementBy)).getText();
   }
-
 async selectcolor() {
   await this.driver.wait(until.elementLocated(this.color)).click();
 } 
@@ -52,6 +43,7 @@ async createaccount() {
   await this.driver.wait(until.elementLocated(this.signinbutton)).click();
   await this.driver.wait(until.elementLocated(this.createnewaccountbutton)).click();
 }
+//This is the specific color number input for red
 async redfill() {
   await this.sendKeys(this.colornumber, "A60606");
   await this.driver.wait(until.elementLocated(this.colorokbutton)).click();
@@ -61,6 +53,7 @@ async redfill() {
 async clicky() {
   await this.driver.wait(until.elementLocated(this.clickout)).click();
 }
+//This one was tricky but allows you to fully select the box with the specific color number
 async changecolor() {
   this.driver.findElement(this.colornumber).click;
   await this.driver.findElement(this.colornumber).isSelected();
@@ -68,6 +61,7 @@ async changecolor() {
   this.driver.findElement(this.colornumber).clear();
   this.driver.findElement(this.colornumber).clear();
 }
+//Changing the flownumber allows you to manage the opacity of the color that's been selected
 async changeflownumber() {
   this.driver.findElement(this.flownumber).click;
   await this.driver.findElement(this.flownumber).isSelected();
@@ -87,6 +81,7 @@ async usebrush() {
 async gotoapp() {
   await this.driver.wait(until.elementLocated(this.paintonlinebutton)).click();
 }
+//these will allow you to enter text into the fields I have located up above in the test phase.
 async typename(text: string) {
   return this.sendKeys(this.name, `${text}`);
 }
@@ -99,23 +94,4 @@ async typepassword(text: string) {
 async typere_password(text: string) {
   return this.sendKeys(this.repassword, `${text}`);
 }
-// async navigate() {
-//   await this.driver.get(this.url);
-//   await this.driver.wait(until.elementLocated(this.homepage));
-//   await this.driver.wait(
-//     until.elementIsVisible(await this.driver.findElement(this.homepage))
-//   );
-// }
-
-  // async getResults() {
-  //   return this.getText(this.redcolornumberbox);
-  // }
-
-  // async doSearch(text: string) {
-  //   return this.sendKeys(this.searchbox, `${text}`);
-  // }
-  // async getsearchresults() {
-  //   return this.getText(this.searchresults)
-  // }
-  
 }
