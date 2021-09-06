@@ -9,6 +9,6 @@ To execute these tests:
 
 (inside git bash)
 
-Install dependencies: npm i
+1. Install dependencies: npm i
 
-Execute the tests: npm nasatest
+2. Execute the tests: npm nasatest
