@@ -12,4 +12,6 @@ To execute these tests:
 
 1. Install dependencies: npm i
 
-2. Execute the tests: npm nasatest
+2. Execute the tests: npm (name of the test)
+
+*** I am actively updating my locators as this website is updated frequently ***
